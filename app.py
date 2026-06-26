@@ -11,7 +11,7 @@ st.title("🏭 QUẢN LÝ KHUÔN - PHÂN XƯỞNG")
 def connect_sheets():
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     # Trên Streamlit Cloud, bạn sẽ lưu JSON trong Secrets
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["gcp_service_account"], scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["gcp_QlyKhuon"], scope)
     client = gspread.authorize(creds)
     return client.open_by_key(st.secrets["sheet_id"]).sheet1
 
